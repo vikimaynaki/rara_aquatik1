@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="b953ac04-8099-4a14-8b88-d1769de6d510">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="31"/>
+	<style name="Title" forecolor="#FFFFFF" fontName="Times New Roman" fontSize="50" isBold="false" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Times New Roman" fontSize="18" isBold="false" pdfFontName="Times-Roman"/>
+	<style name="Column header" forecolor="#666666" fontName="Times New Roman" fontSize="14" isBold="true" pdfFontName="Times-Roman"/>
+	<style name="Detail" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman"/>
+	<style name="Row" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style mode="Opaque" backcolor="#F0EFEF"/>
+		</conditionalStyle>
+	</style>
+	<subDataset name="PieChartDataset" uuid="f96eec91-1046-4ac0-a39d-b47d60252779"/>
+	<queryString language="SQL">
+		<![CDATA[select * from dataguru]]>
+	</queryString>
+	<field name="kode_guru" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nama_guru" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tempat_lahir" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tanggal_lahir" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="jenis_kelamin" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="alamat" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="no_telepon" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band height="802" splitType="Stretch">
+			<line>
+				<reportElement uuid="d5b0f594-23ee-4508-89f4-85ee50b076f4" x="201" y="431" width="117" height="1">
+					<printWhenExpression><![CDATA[Boolean.FALSE]]></printWhenExpression>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="3.0" lineStyle="Dotted" lineColor="#996600"/>
+				</graphicElement>
+			</line>
+		</band>
+	</background>
+	<title>
+		<band height="94" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="f8bbc4f7-5d14-47f8-94a2-e9d58de267c0" style="SubTitle" x="276" y="65" width="277" height="29"/>
+				<textElement textAlignment="Right">
+					<font size="18" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Sekolah Renang Rara Aquatik Jakarta]]></text>
+			</staticText>
+			<frame>
+				<reportElement uuid="0f8d2106-3e04-452e-9f71-6d4bf3bee3d1" mode="Opaque" x="-20" y="0" width="597" height="65" forecolor="#006699" backcolor="#006699"/>
+				<staticText>
+					<reportElement uuid="9eae6cfc-2583-435a-85a5-3b7df6f66705" style="Title" x="20" y="0" width="223" height="65"/>
+					<textElement textAlignment="Right">
+						<font size="48" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Data Guru]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="30" splitType="Stretch">
+			<frame>
+				<reportElement uuid="8a6c9c1b-9898-4c6c-889c-5ef7924e9718" x="4" y="0" width="551" height="20"/>
+				<staticText>
+					<reportElement uuid="cb410a74-c844-44fc-b5f8-eca9ad4b0426" style="Column header" positionType="Float" x="0" y="0" width="68" height="20" forecolor="#000000"/>
+					<textElement>
+						<font fontName="Arial" size="12" isBold="false" pdfFontName="Helvetica"/>
+					</textElement>
+					<text><![CDATA[kode_guru]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="f995c9ff-583c-4008-8958-52017d02ef63" style="Column header" positionType="Float" x="82" y="0" width="67" height="20" forecolor="#000000"/>
+					<textElement>
+						<font fontName="Arial" size="12" isBold="false" pdfFontName="Helvetica"/>
+					</textElement>
+					<text><![CDATA[nama_guru]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="cc06b4b8-75f4-4d69-b6b8-7e72246c469d" style="Column header" positionType="Float" x="161" y="0" width="69" height="20" forecolor="#000000"/>
+					<textElement>
+						<font fontName="Arial" size="12" isBold="false" pdfFontName="Helvetica"/>
+					</textElement>
+					<text><![CDATA[tempat_lahir]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="58505263-ec47-4f19-b5b5-53a619d929b7" style="Column header" positionType="Float" x="245" y="0" width="77" height="20" forecolor="#000000"/>
+					<textElement>
+						<font fontName="Arial" size="12" isBold="false" pdfFontName="Helvetica"/>
+					</textElement>
+					<text><![CDATA[tanggal_lahir]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="8085331f-263c-4923-9fcb-bc22b2ba028b" style="Column header" positionType="Float" x="332" y="0" width="84" height="20" forecolor="#000000"/>
+					<textElement>
+						<font fontName="Arial" size="12" isBold="false" pdfFontName="Helvetica"/>
+					</textElement>
+					<text><![CDATA[jenis_kelamin]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="6b9276fd-495a-4924-ade0-8a946b56764b" style="Column header" positionType="Float" x="426" y="0" width="47" height="20" forecolor="#000000"/>
+					<textElement>
+						<font fontName="Arial" size="12" isBold="false" pdfFontName="Helvetica"/>
+					</textElement>
+					<text><![CDATA[alamat]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="06ea3f67-af93-4c42-9639-edfcc22aa3f7" style="Column header" positionType="Float" x="486" y="0" width="63" height="20" forecolor="#000000"/>
+					<textElement>
+						<font fontName="Arial" size="12" isBold="false" pdfFontName="Helvetica"/>
+					</textElement>
+					<text><![CDATA[no_telepon]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="43" splitType="Stretch">
+			<line>
+				<reportElement uuid="fc55f8c8-3f79-436c-a5f3-523f5d24c97c" positionType="FixRelativeToBottom" x="4" y="22" width="549" height="1"/>
+			</line>
+			<frame>
+				<reportElement uuid="bbc9d114-abb8-4386-8054-12b4b2f84e7a" x="4" y="0" width="551" height="20"/>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement uuid="e881eaaa-eb9e-434c-962e-aa43fbebdf0c" style="Detail" positionType="Float" x="0" y="0" width="68" height="18"/>
+					<textElement>
+						<font fontName="Arial" size="12" isBold="false" pdfFontName="Helvetica"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{kode_guru}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement uuid="27579f34-a9ad-47f3-b55c-a294dd54372a" style="Detail" positionType="Float" x="82" y="0" width="67" height="18"/>
+					<textElement>
+						<font fontName="Arial" size="12" isBold="false" pdfFontName="Helvetica"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{nama_guru}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement uuid="c6f25cb9-b550-4b80-96e9-420329d79089" style="Detail" positionType="Float" x="171" y="0" width="59" height="18"/>
+					<textElement>
+						<font fontName="Arial" size="12" isBold="false" pdfFontName="Helvetica"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{tempat_lahir}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement uuid="9682c187-af98-4f6e-80ed-3c65b8710ef2" style="Detail" positionType="Float" x="245" y="0" width="77" height="18"/>
+					<textElement>
+						<font fontName="Arial" size="12" isBold="false" pdfFontName="Helvetica"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{tanggal_lahir}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement uuid="a6748e2f-f843-4011-9b38-5afc4e2f1ca3" style="Detail" positionType="Float" x="332" y="0" width="84" height="18"/>
+					<textElement>
+						<font fontName="Arial" size="12" isBold="false" pdfFontName="Helvetica"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{jenis_kelamin}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement uuid="b6ac84b3-c04a-4a27-92fb-d727f0f1920d" style="Detail" positionType="Float" x="426" y="2" width="47" height="18"/>
+					<textElement>
+						<font fontName="Arial" size="12" isBold="false" pdfFontName="Helvetica"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{alamat}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement uuid="c05bef1b-47e7-48c3-9480-579432c70685" style="Detail" positionType="Float" x="486" y="0" width="63" height="18"/>
+					<textElement>
+						<font fontName="Arial" size="12" isBold="false" pdfFontName="Helvetica"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{no_telepon}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="7" splitType="Stretch">
+			<line>
+				<reportElement uuid="738d0315-a189-4d07-8bfc-b6dd8e37422e" positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="13" splitType="Stretch">
+			<frame>
+				<reportElement uuid="642c3d39-29c3-4284-ad2b-ed8d829cb40f" mode="Opaque" x="2" y="0" width="555" height="13" forecolor="#D0B48E" backcolor="#006699"/>
+				<textField evaluationTime="Report">
+					<reportElement uuid="ede420fd-c3c1-4953-b6a2-b720cc810aa2" style="Column header" x="513" y="0" width="40" height="12" forecolor="#FFFFFF"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement uuid="5d223ccb-9c6b-45cb-8c0f-82da75f4c81a" style="Column header" x="428" y="0" width="80" height="12" forecolor="#FFFFFF"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+				</textField>
+				<textField pattern="EEEEE dd MMMMM yyyy">
+					<reportElement uuid="45d0480d-7bbd-4557-b78e-4021adf09c88" style="Column header" x="2" y="0" width="197" height="13" forecolor="#FFFFFF"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

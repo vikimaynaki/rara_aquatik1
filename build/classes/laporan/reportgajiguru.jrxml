@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="b465d155-97c3-4672-9a82-11176874dc6a">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="20"/>
+	<style name="Title" forecolor="#FFFFFF" fontName="Times New Roman" fontSize="50" isBold="false" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Times New Roman" fontSize="18" isBold="false" pdfFontName="Times-Roman"/>
+	<style name="Column header" forecolor="#666666" fontName="Times New Roman" fontSize="14" isBold="true" pdfFontName="Times-Roman"/>
+	<style name="Detail" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman"/>
+	<style name="Row" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style mode="Opaque" backcolor="#F0EFEF"/>
+		</conditionalStyle>
+	</style>
+	<subDataset name="PieChartDataset" uuid="aa842a0e-5eca-42d2-bb62-280e52ac443d"/>
+	<parameter name="p4" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[select *from gaji_guru
+where kode_guru = $P{p4}]]>
+	</queryString>
+	<field name="kode_guru" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nama_guru" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nama_siswa" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tgl_pertemuan1" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tgl_pertemuan2" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tgl_pertemuan3" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tgl_pertemuan4" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="jumlah_pertemuan" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="jumlahgaji_diterima" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tanggal" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band height="555" splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="94" splitType="Stretch">
+			<frame>
+				<reportElement uuid="5dc333c9-2d76-4433-8286-d017b72000a3" mode="Opaque" x="-20" y="0" width="822" height="65" forecolor="#006699" backcolor="#006699"/>
+				<staticText>
+					<reportElement uuid="872a7a84-c0a7-4f56-b357-ebfe7921e9c9" style="Title" x="22" y="0" width="248" height="65"/>
+					<textElement textAlignment="Right">
+						<font size="54" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Gaji Guru]]></text>
+				</staticText>
+			</frame>
+			<staticText>
+				<reportElement uuid="f8bbc4f7-5d14-47f8-94a2-e9d58de267c0" style="SubTitle" x="518" y="65" width="277" height="29"/>
+				<textElement textAlignment="Right">
+					<font size="18" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Sekolah Renang Rara Aquatik Jakarta]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="14" splitType="Stretch">
+			<frame>
+				<reportElement uuid="c22b397a-b7e3-4105-aa39-cba52a61701e" x="227" y="0" width="575" height="14"/>
+				<staticText>
+					<reportElement uuid="78ebc934-50e1-4573-b6d4-4933aa5989b4" style="Column header" positionType="Float" x="67" y="0" width="81" height="14" forecolor="#000000"/>
+					<textElement>
+						<font fontName="Arial" size="12" isBold="true" pdfFontName="Helvetica"/>
+					</textElement>
+					<text><![CDATA[tgl_p'temuan2]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="acaded6d-65a1-43c5-8bd3-e9af3dae849e" style="Column header" positionType="Float" x="159" y="0" width="84" height="14" forecolor="#000000"/>
+					<textElement>
+						<font fontName="Arial" size="12" isBold="true" pdfFontName="Helvetica"/>
+					</textElement>
+					<text><![CDATA[tgl_p'temuan3]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="0fa27fed-3d6b-4790-9fd4-e33372e767dc" style="Column header" positionType="Float" x="255" y="0" width="87" height="14" forecolor="#000000"/>
+					<textElement>
+						<font fontName="Arial" size="12" isBold="true" pdfFontName="Helvetica"/>
+					</textElement>
+					<text><![CDATA[tgl_p'temuan4]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="8b896398-5193-4d58-af7a-a2bed5ae1600" style="Column header" positionType="Float" x="352" y="0" width="82" height="14" forecolor="#000000"/>
+					<textElement>
+						<font fontName="Arial" size="12" isBold="true" pdfFontName="Helvetica"/>
+					</textElement>
+					<text><![CDATA[jml_p'temuan]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="9e3fde48-5ab1-4d3c-b6cd-b59646469977" style="Column header" positionType="Float" x="434" y="0" width="94" height="14" forecolor="#000000"/>
+					<textElement>
+						<font fontName="Arial" size="12" isBold="true" pdfFontName="Helvetica"/>
+					</textElement>
+					<text><![CDATA[jmlgaji_diterima]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="58cb90ad-9407-40b3-abcc-82be42d3b6cc" style="Column header" positionType="Float" x="540" y="0" width="30" height="14" forecolor="#000000"/>
+					<textElement>
+						<font fontName="Arial" size="12" isBold="true" pdfFontName="Helvetica"/>
+					</textElement>
+					<text><![CDATA[tgl]]></text>
+				</staticText>
+			</frame>
+			<staticText>
+				<reportElement uuid="634ba8e2-e880-48ae-9696-4a3001776151" style="Column header" positionType="Float" x="0" y="0" width="62" height="14" forecolor="#000000"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true" pdfFontName="Helvetica"/>
+				</textElement>
+				<text><![CDATA[kd_guru]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="c2dc071d-53ff-49ac-9a14-b5ec2ba2fff9" style="Column header" positionType="Float" x="62" y="0" width="55" height="14" forecolor="#000000"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true" pdfFontName="Helvetica"/>
+				</textElement>
+				<text><![CDATA[nm_guru]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="c1418a1d-456a-4cfa-ad12-c29b162c597b" style="Column header" positionType="Float" x="127" y="0" width="62" height="14" forecolor="#000000"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true" pdfFontName="Helvetica"/>
+				</textElement>
+				<text><![CDATA[nm_siswa]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="1c842b76-bb38-48d5-986e-c1b0ca478510" style="Column header" positionType="Float" x="198" y="0" width="86" height="14" forecolor="#000000"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true" pdfFontName="Helvetica"/>
+				</textElement>
+				<text><![CDATA[tgl_p'temuan1]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="15" splitType="Stretch">
+			<line>
+				<reportElement uuid="9e902cfd-2053-4390-bb20-24245e8f6d66" positionType="FixRelativeToBottom" x="0" y="14" width="802" height="1"/>
+			</line>
+			<frame>
+				<reportElement uuid="b7613570-ba79-446b-9a19-948aecbce1ae" x="227" y="0" width="575" height="14"/>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement uuid="3e15fe3e-3e3d-45be-a0da-15a2d2a10631" style="Detail" positionType="Float" x="67" y="0" width="69" height="14"/>
+					<textElement>
+						<font fontName="Arial" size="12" isBold="false" pdfFontName="Helvetica"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{tgl_pertemuan2}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement uuid="2d1452c5-d1ee-454a-8a6f-5108263d9149" style="Detail" positionType="Float" x="159" y="0" width="74" height="14"/>
+					<textElement>
+						<font fontName="Arial" size="12" isBold="false" pdfFontName="Helvetica"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{tgl_pertemuan3}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement uuid="63482ea1-b4ea-41e8-a355-2e307a9c38ca" style="Detail" positionType="Float" x="255" y="0" width="73" height="14"/>
+					<textElement>
+						<font fontName="Arial" size="12" isBold="false" pdfFontName="Helvetica"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{tgl_pertemuan4}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement uuid="7df073de-f25d-4246-a5c2-77f33b268bf6" style="Detail" positionType="Float" x="352" y="0" width="57" height="14"/>
+					<textElement>
+						<font fontName="Arial" size="12" isBold="false" pdfFontName="Helvetica"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{jumlah_pertemuan}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement uuid="778145b0-b1b5-4781-b0af-12ebc672f16f" style="Detail" positionType="Float" x="434" y="0" width="74" height="14"/>
+					<textElement>
+						<font fontName="Arial" size="12" isBold="false" pdfFontName="Helvetica"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{jumlahgaji_diterima}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement uuid="e9acecf0-a368-4c28-951c-b55187f11602" style="Detail" positionType="Float" x="540" y="0" width="30" height="14"/>
+					<textElement>
+						<font fontName="Arial" size="12" isBold="false" pdfFontName="Helvetica"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{tanggal}]]></textFieldExpression>
+				</textField>
+			</frame>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="c2c0bddb-5778-4ccf-ab40-57b3e07470ec" style="Detail" positionType="Float" x="0" y="1" width="50" height="14"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="false" pdfFontName="Helvetica"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{kode_guru}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="beec62bb-7cf2-4844-8e34-e2693e1be86e" style="Detail" positionType="Float" x="62" y="1" width="55" height="14"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="false" pdfFontName="Helvetica"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nama_guru}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="fe3e1b59-b971-40e9-bd7f-ac1b7077dfe4" style="Detail" positionType="Float" x="127" y="1" width="57" height="14"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="false" pdfFontName="Helvetica"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nama_siswa}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="7eb20e0f-7348-4c62-8def-55f7edf1b254" style="Detail" positionType="Float" x="198" y="1" width="78" height="14"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="false" pdfFontName="Helvetica"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tgl_pertemuan1}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="14" splitType="Stretch">
+			<line>
+				<reportElement uuid="51bc3ff6-a6c0-4062-b8a5-fa1e1403a56c" positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="16" splitType="Stretch">
+			<frame>
+				<reportElement uuid="d70f4601-1463-48ff-874f-e4e296ba23f6" mode="Opaque" x="2" y="0" width="800" height="16" forecolor="#D0B48E" backcolor="#006699"/>
+				<textField evaluationTime="Report">
+					<reportElement uuid="e6d02e1d-4c81-4403-bee0-f69b2b3f85a8" style="Column header" x="753" y="0" width="40" height="16" forecolor="#FFFFFF"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="12" isBold="false" pdfFontName="Helvetica"/>
+					</textElement>
+					<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement uuid="8cf9f1a4-b41a-4fca-a38e-ff25fab1516b" style="Column header" x="673" y="0" width="80" height="16" forecolor="#FFFFFF"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font fontName="Arial" size="12" isBold="false" pdfFontName="Helvetica"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+				</textField>
+				<textField pattern="EEEEE dd MMMMM yyyy">
+					<reportElement uuid="840503aa-672e-44db-8e4a-b0f88e7e5ca3" style="Column header" x="2" y="0" width="197" height="16" forecolor="#FFFFFF"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="12" isBold="false" pdfFontName="Helvetica"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
